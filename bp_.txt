@@ -1,0 +1,7 @@
+*,Best Practices Guide,,bp_.htm,,,
+
+**,Equipment,,bp_equip.htm,,,
+**,Personnel,,bp_personnel.htm,,,
+**,Planning,,bp_planning.htm,,,
+**,Site Operations,,bp_site.htm,,,
+**,Data Management,,bp_data.htm,,,

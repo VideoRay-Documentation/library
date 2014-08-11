@@ -1,0 +1,46 @@
+#accessoryName	accessoryProject	Cat	Mfg 
+CoPilot RI	copilot_ri/html/index.htm	Platform Integration / Autonomy	VideoRay
+CoPilot Sonar	copilot_sonar/html/index.htm	Platform Integration / Autonomy	VideoRay
+CoPilot Survey	copilot_survey/html/index.htm	Platform Integration / Autonomy	VideoRay
+#
+External Camera	external_camera/html/index.htm	Imagery Support and Enhancement	VideoRay
+Zoom Camera	outland_zoom_camera/html/index.html	Imagery Support and Enhancement	VideoRay
+GoPro HD Camera Kit	gopro/html/index.htm	Imagery Support and Enhancement	VideoRay
+HD Camera	hd_camera/html/index.htm	Imagery Support and Enhancement	VideoRay
+Hawk Visibility Enhancement	lyyn_hawk/html/index.htm	Imagery Support and Enhancement	Lyyn
+#Helios Visibility Enhancement	inuktun_helios/html/index.htm	Imagery Support and Enhancement	Inuktun Services
+#LACE Visibility Enhancement	tno_lace/html/index.htm	Imagery Support and Enhancement	TNO
+#
+Manipulator	manipulator/html/index.htm	Intervention	VideoRay
+Cutter	cutter/html/index.htm	Intervention	VideoRay
+#
+Hull Inspection Stabilizer	hull_inspection/html/index.htm	Propulsion	VideoRay
+Lateral Thruster	lateral/html/index.htm	Propulsion	VideoRay
+#Microtrac Crawler	inuktun_microtrac/html/index.htm	Propulsion	Inuktun Services
+#
+ProViewer Imaging Sonar	blueview_proviewer/html/index.htm	Sonar Systems	Teledyne BlueView
+Gemini Imaging Sonar	tritech_gemini/html/index.htm	Sonar Systems	Tritech International
+Micron Scanning Sonar	tritech_micron_sonar/html/index.htm	Sonar Systems	Tritech International
+#
+Micron Echosounder	tritech_micron_echo/html/index.htm	Position Tracking Systems	Tritech International
+Micron Nav	tritech_micron_nav/html/index.htm	Position Tracking Systems	Tritech International
+Smart Tether	kcf_smart_tether/html/index.htm	Position Tracking Systems	KCF Technologies
+RDI DVL	rdi_dvl/html/index.htm	Position Tracking Systems	Teledyne RD Instruments
+ROV GPS Antenna	rov_gps/html/index.htm	Position Tracking Systems	VideoRay
+#AquaMap Seafloor	desert_star_seafloor/html/index.htm	Position Tracking Systems	Desert Star Systems
+#AquaMap Shiphull	desert_star_shiphull/html/index.htm	Position Tracking Systems	Desert Star Systems
+#Pilot (Desert Star)	desert_star_pilot/html/index.htm	Position Tracking Systems	Desert Star Systems
+#
+#C3 Fluorometer	turner_c3/html/index.htm	Sensors	Turner Designs
+Cathodic Protection Probe	buckleys_cp_probe/html/index.htm	Sensors	Buckley's
+Laser Scaling Device	laser_scaling/html/index.htm	Sensors	VideoRay
+#METS Methane Sensor	franatech_mets/html/index.htm	Sensors	Franatech
+#PhytoFlash Fluorometer	turner_phytoflash/html/index.htm	Sensors	Turner Designs
+Radiation Sensor	rad_sensor/html/index.htm	Sensors	VideoRay
+Ultrasonic Thickness Gauge	cygnus_ut/html/index.htm	Sensors	Cygnus Instruments
+600XL Sonde	ysi_600xl/html/index.htm	Sensors	YSI
+#
+#PAM	pam/html/index.htm	Adapter Modules	VideoRay
+#TINA	tina/html/index.htm	Adapter Modules	VideoRay
+#
+#Protective Frame	buccaneer_frame/html/index.htm	Miscellaneous	Buccaneer

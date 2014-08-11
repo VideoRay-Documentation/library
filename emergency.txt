@@ -1,0 +1,6 @@
+v*,Emergency Situations,oper_emergency.html,library/htm/oper_emergency.htm,,,
+v**,Flooded ROV,emergency_flood.html,library/htm/emergency_flood.htm,,,
+v**,Snagged Tether/ROV,emergency_snag.html,library/htm/emergency_snag.htm,,,
+v**,Cut Tether,emergency_cut.html,library/htm/emergency_cut.htm,,,
+v**,Loss of ROV Function(s),emergency_function.html,library/htm/emergency_function.htm,,,
+
