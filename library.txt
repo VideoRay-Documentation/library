@@ -1,103 +1,77 @@
 #Document Commands
 !PRODUCT,VideoRay Library
-!VERSION,Version: 1.00.00
+!VERSION,1.00.00
 !OUT_DIR,library/
-!VALID_PAGES,0l
+!VALID_PAGES,4
 !VALID_TEXT,c
 !TEMPLATE_COVER,required/htm/template_index_print.htm,index_print.htm.htm
 
 #Documentation Generation
 v*,Introduction,,index.htm,,index_sb.htm,,,
 **,Copyright,copyright.html,required/htm/copyright.htm,,,
-v**,Language Support,,intro_language.htm,,,../../required/images/globe2.png
+v**,Language Support,intro_about.htm,required/htm/intro_language.htm,,,../../required/images/globe2.png
 v**,Table of Contents,,_toc_view.htm,,,
 p**,Table of Contents,,_toc_print.htm,,,
-#**,About this Library,,intro_about.htm,,required/htm/intro_about_sb.htm,,,
 **,About this Library,intro_about.html,required/htm/intro_about.htm,,intro_about_sb.htm,
 
 *,Introduction to ROV Operations,,intro_rov_ops.htm,,,
 
-!INCLUDE,oper_.txt,1
-
-*,General Maintenance Guide,,mnt_.txt,,,
-!INCLUDE,mnt/mnt_bp.txt,2
-!INCLUDE,mnt/mnt_routine.txt,2
-!INCLUDE,mnt/mnt_diagnostics.txt,2
-
-#!INCLUDE,library/bp_.txt,1
-
 *,Operator's Manuals,,operators_manuals.htm,,,
+!INCLUDE,oper_.txt,2
+
 **,ROV Systems,,rov_manuals.htm,,,
-***,Pro 4,nul,../../pro_4/html/index.htm,,,../images/pro_4.jpg
-***,Deep Blue,nul,../../deep_blue/pdf/vr_deep_blue.pdf,,,../images/deep_blue.jpg
-***,Pro 3 GTO,nul,../../pro_3_gto/pdf/vr_pro3xegto.pdf,,,../images/pro_3_gto.jpg
-***,Pro 3,nul,../../pro_3/pdf/vr_proiii.pdf,,,../images/pro_3.jpg
-***,Explorer,nul,../../explorer/pdf/vr_explorer.pdf,,,../images/explorer.jpg
-***,Scout,nul,../../scout/pdf/scout.pdf,,,../images/scout.jpg
+!INCLUDE,library/rov_manuals.txt,3
 
 **,Accessory Systems,,acc_manuals.htm,,,
-
 !INCLUDE,library/_acc_by_cat.txt,3
 !INCLUDE,library/_acc_by_mfg.txt,3
 !INCLUDE,library/_acc_by_az.txt,3
 
-#*,Training Manuals,,nul,,,
-#**,CoPilot_RI,nul,../../trn_copilot_ri/index.htm,,,
+*,Diagnostic Manuals,,diagnostic_manuals.htm,,,
+!INCLUDE,diagnostics.txt,2
+**,Accessory Systems,,acc_diag_manuals.htm,,,
+***,Rotating Manipulator,NUL,../../rotating_manipulator_vital/html/index.htm,,,
 
 *,Maintenance Manuals,,nul,,,
+**,General Maintenance Guide,,mnt_.htm,,,
+!INCLUDE,mnt/mnt_n.txt,3
+#!INCLUDE,library/bp_.txt,1
 
-**,ROV Systems,,rov_mnt.htm,,,
-***,Pro 4 Maintenance,nul,../../pro_4_mnt_n/html/index.htm,,,../images/pro_4_mnt.png
-#***,Deep Blue Maintenance,nul,../../deep_blue_mnt/pdf/vr_deep_blue.pdf,,,../images/deep_blue_mnt.png
-#***,Pro 3 GTO Maintenance,nul,../../pro_3_gto_mnt/pdf/vr_pro3xegto.pdf,,,../images/pro_3_gto_mnt.png
-#***,Pro 3 Maintenance,nul,../../pro_3_mnt/pdf/vr_proiii.pdf,,,../images/pro_3_mnt.png
-#***,Explorer Maintenance,nul,../../explorer_mnt/pdf/vr_explorer.pdf,,,../images/explorer_mnt.png
-#***,Scout Maintenance,nul,../../scout_mnt/pdf/scout.pdf,,,../images/scout_mnt.png
+**,ROV Systems,,rov_mnt_manuals.htm,,,
+!INCLUDE,rov_mnt_manuals.txt,3
 
-#***,Accessory Systems,,acc_mnt.html,,,
-#***,AquaMap Seafloor,nul,../../desert_star_seafloor_mnt/html/index.htm,,,
-#***,AquaMap Shiphull,nul,../../desert_star_shiphull_mnt/html/index.htm,,,
-#***,C3 Fluorometer,nul,../../turner_c3_mnt/html/index.htm,,,
-#***,Cathodic Protection Probe,nul,../../buckleys_cp_probe_mnt/html/index.htm,,,
-#***,Cutter,nul,../../cutter_mnt/html/index.htm,,,
-#***,Explorer DVL,nul,../../teledyne_explorer_dvl_mnt/html/index.htm,,,
-#***,External Camera,nul,../../external_camera_mnt/html/index.htm,,,
-#***,Gemini Imaging Sonar,nul,../../tritech_gemini_mnt/html/index.htm,,,
-#***,GoPro Kit,nul,../../gopro_mnt/html/index.htm,,,
-#***,Hawk Video Enhancement,nul,../../lyyn_hawk_mnt/html/index.htm,,,
-#***,HD Camera,nul,../../hd_camera_mnt/html/index.htm,,,
-#***,Helios Video Enhancement,nul,../../inuktun_helios_mnt/html/index.htm,,,
-#***,Hull Inspection Stabilizer,nul,../../hull_inspection_mnt/html/index.htm,,,
-#***,LACE Video Enhancement,nul,../../tno_mnt/html/index.htm,,,
-#***,Laser Scaling Device,nul,../../laser_scaling_mnt/html/index.htm,,,
-#***,Lateral Thruster,nul,../../lateral_mnt/html/index.htm,,,
-#***,Manipulator,nul,../../manipulator_mnt/html/index.htm,,,
-#***,METS Methane Sensor,nul,../../franatech_mets_mnt/html/index.htm,,,
-#***,Micron Echosounder,nul,../../tritech_micron_echo_mnt/html/index.htm,,,
-#***,Micron Nav,nul,../../tritech_micron_nav_mnt/html/index.htm,,,
-#***,Micron Scanning Sonar,nul,../../tritech_micron_sonar_mnt/html/index.htm,,,
-#***,Microtrac Crawler,nul,../../inuktun_microtrac_mnt/html/index.htm,,,
-#***,PAM,nul,../../pam_mnt/html/index.htm,,,
-#***,Pan/Tilt Pole Mount,nul,../../blueview_pole_mount_mnt/html/index.htm,,,
-#***,PhytoFlash,nul,../../turner_phytoflash_mnt/html/index.htm,,,
-#***,Pilot (Desert Star),nul,../../desert_star_pilot_mnt/html/index.htm,,,
-#***,Protective Frame,nul,../../buccaneer_frame_mnt/html/index.htm,,,
-#***,ProViewer Imaging Sonar,nul,../../blueview_proviewer_mnt/html/index.htm,,,
-#***,Radiation Sensor,nul,../../rad_sensor_mnt/html/index.htm,,,
-#***,RI CoPilot,nul,../../ri_copilot_mnt/html/index.htm,,,
-#***,Smart Tether,nul,../../kcf_smart_tether_mnt/html/index.htm,,,
-#***,Sonar CoPilot,nul,../../sonar_copilot_mnt/html/index.htm,,,
-#***,Survey CoPilot,nul,../../survey_copilot_mnt/html/index.htm,,,
-#***,TINA,nul,../../tina_mnt/html/index.htm,,,
-#***,Ultrasonic Thickness Gauge,nul,../../cygnus_ut_mnt/html/index.htm,,,
-#***,600XL Sonde,nul,../../ysi_600xl_mnt/html/index.htm,,,
+#**,Accessory Systems,,acc_mnt_manuals.htm,,,
+#!INCLUDE,library/_acc_mnt_by_cat.txt,3
+#!INCLUDE,library/_acc_mnt_by_mfg.txt,3
+#!INCLUDE,library/_acc_mnt_by_az.txt,3
 
-!INCLUDE,library/app_.txt,1
+#*,Training Manuals,,nul,,,
 
-#*,Customization Guide,,customization.htm,,,
-#**,Accessory Integration,,
-#***,PAM,nul,../../pam/html/index.htm,,,
-#****,Zoom Camera,../../pam_zoom_camera/html/index.htm,,,
-#**,SDK,nul,sdk.htm
-#***,Instrument Example,../../instrument_example/html/index.htm,,,
-#***,Override Mode
+#**,ROV Systems,,rov_trn_manuals.htm,,,
+#!INCLUDE,library/rov_trn_manuals.txt,3
+
+#**,Accessory Systems,,acc_trn_manuals.htm,,,
+#!INCLUDE,library/_acc_trn_by_cat.txt,3
+#!INCLUDE,library/_acc_trn_by_mfg.txt,3
+#!INCLUDE,library/_acc_trn_by_az.txt,3
+
+#*,Standard Operating Procedures,,nul,,,
+
+#**,ROV Systems,,rov_sop_manuals.htm,,,
+#!INCLUDE,library/rov_sop_manuals.txt,3
+
+#**,Accessory Systems,,acc_sop_manuals.htm,,,
+#!INCLUDE,library/_acc_sop_by_cat.txt,3
+#!INCLUDE,library/_acc_sop_by_mfg.txt,3
+#!INCLUDE,library/_acc_sop_by_az.txt,3
+
+*,Industry Guides,,industry_.htm,,,
+#!INCLUDE,library/apps_.txt,2
+#!INCLUDE,library/jobs_.txt,2
+
+*,Customization Guide,,customization.htm,,,
+**,Accessory Integration,,accessory_integration.htm,,,
+***,PAM,nul,../../pam/html/index.htm,,,
+****,Zoom Camera,nul,../../pam_zoom_camera/html/index.htm,,,
+****,Echosounder,nul,../../pam_echosounder/html/index.htm,,,
+**,SDK (Software Developers Kit),nul,https://github.com/videoray,,,

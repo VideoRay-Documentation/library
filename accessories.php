@@ -4,6 +4,7 @@ $accessoryNameIndex = 0;
 $accessoryProjIndex = 1;
 $accessoryCatIndex = 2;
 $accessoryMfgIndex = 3;
+$accessoryWwwIndex = 4;
 
 $categoryNameIndex = 0;
 $categoryHeadingIndex = 1;
@@ -17,11 +18,20 @@ $dataDir = "data/";
 $htmDir = "htm/";
 
 $accessoriesFile = $dataDir . "accessories.csv";
+$manualTypesFile = $dataDir . "manual_types.csv";
 $categoriesFile = $dataDir . "categories.csv";
 $manufacturersFile = $dataDir . "manufacturers.csv";
 
 $catList = "";
 $mfgList = "";
+
+//open manual type list file
+$manualTypesData = file($manualTypesFile);
+$manualTypesFound = 0;
+$manualTypesHeader = explode("|",$manualTypesData[0]);
+
+for ($manualTypesCount = 1 ; $manualTypesCount < sizeof($manualTypesData) ; $manualTypesCount++) {
+$manualType = trim($manualTypesData[$manualTypesCount]);
 
 //open categories list file
 $categoriesData = file($categoriesFile);
@@ -33,7 +43,7 @@ for ($categoriesCount = 1 ; $categoriesCount < sizeof($categoriesData) ; $catego
   $categoriesRow = explode("	",$categoriesData[$categoriesCount]);
   if (substr($categoriesRow[$categoryNameIndex],0,1) != "#") {
     $catSection[$categoriesRow[$categoryNameIndex]] = trim($categoriesRow[$categoryHeadingIndex]) . "\n";
-    $catSectionHtm[$categoriesRow[$categoryNameIndex]] = "  <li><b><a href=\"" . trim($categoriesRow[$categoryHtmIndex]) . ".html\">" . $categoriesRow[$categoryNameIndex] . "</a></b></li>\n  <ul>\n";
+    $catSectionHtm[$categoriesRow[$categoryNameIndex]] = "  <li><b><a href=\"../../library/html/_cat_" . trim($categoriesRow[$categoryHtmIndex]) . ".html\">" . $categoriesRow[$categoryNameIndex] . "</a></b></li>\n  <ul>\n";
     $catSubsectionHtm[$categoriesRow[$categoryNameIndex]] = "<h3>" . $categoriesRow[$categoryNameIndex] . " Accessories</h3>\n\n<ul>\n";
     }
   }
@@ -48,8 +58,8 @@ for ($manufacturersCount = 1 ; $manufacturersCount < sizeof($manufacturersData) 
   $manufacturersRow = explode("	",$manufacturersData[$manufacturersCount]);
   if (substr($manufacturersRow[$manufacturerNameIndex],0,1) != "#") {
     $mfgSection[$manufacturersRow[$manufacturerNameIndex]] = trim($manufacturersRow[$manufacturerHeadingIndex]) . "\n";
-    $mfgSectionHtm[$manufacturersRow[$manufacturerNameIndex]] = "  <li><b><a href=\"" . trim($manufacturersRow[$manufacturerHtmIndex]) . ".html\">" . $manufacturersRow[$manufacturerNameIndex] . "</a></b></li>\n  <ul>\n";
-    $mfgSubsectionHtm[$manufacturersRow[$manufacturerNameIndex]] = "<h3>" . $manufacturersRow[$manufacturerNameIndex] . " Accessories</h3>\n\n<ul>\n";
+    $mfgSectionHtm[$manufacturersRow[$manufacturerNameIndex]] = "  <li><b><a href=\"../../library/html/_mfg_" . trim($manufacturersRow[$manufacturerHtmIndex]) . ".html\">" . $manufacturersRow[$manufacturerNameIndex] . "</a></b></li>\n  <ul>\n";
+    $mfgSubsectionHtm[$manufacturersRow[$manufacturerNameIndex]] = "<h3>VideoRay integrated accessories from " . $manufacturersRow[$manufacturerNameIndex] . " include the following:</h3>\n\n<ul>\n";
     }
   }
 
@@ -57,20 +67,21 @@ for ($manufacturersCount = 1 ; $manufacturersCount < sizeof($manufacturersData) 
 $accessoriesData = file($accessoriesFile);
 $accessoriesFound = 0;
 $accessoriesHeader = explode("|",$accessoriesData[0]);
+sort($accessoriesData,SORT_STRING);
 
 //output scripts
-$accessoriesByAZ = "_acc_by_az.txt";
-$accessoriesByCat = "_acc_by_cat.txt";
-$accessoriesByMfg = "_acc_by_mfg.txt";
+$accessoriesByAZ = "_acc_" . $manualType . "by_az.txt";
+$accessoriesByCat = "_acc_" . $manualType . "by_cat.txt";
+$accessoriesByMfg = "_acc_" . $manualType . "by_mfg.txt";
 
 //ouptut htm files
-$accessoriesAZ = $htmDir . "_accessories_az.htm";
-$accessoriesCat = $htmDir . "_accessories_cat.htm";
-$accessoriesMfg = $htmDir . "_accessories_mfg.htm";
+$accessoriesAZ = $htmDir . "_accessories_" . $manualType . "az.htm";
+$accessoriesCat = $htmDir . "_accessories_" . $manualType . "cat.htm";
+$accessoriesMfg = $htmDir . "_accessories_" . $manualType . "mfg.htm";
 
-$az = "v*,Accessories by A-Z,accessories_az.html,library/htm/_accessories_az.htm,,,\n\n";
-$cat = "v*,Accessories by Category,accessories_cat.html,library/htm/_accessories_cat.htm,,,\n\n";
-$mfg = "v*,Accessories by Manufacturer,accessories_mfg.html,library/htm/_accessories_mfg.htm,,,\n\n";
+$az = "v*,Accessories by A-Z,_accessories_" . $manualType . "az.html,library/htm/_accessories_" . $manualType . "az.htm,,,\n\n";
+$cat = "v*,Accessories by Category,_accessories_" . $manualType . "cat.html,library/htm/_accessories_" . $manualType . "cat.htm,,,\n\n";
+$mfg = "v*,Accessories by Manufacturer,_accessories_" . $manualType . "mfg.html,library/htm/_accessories_" . $manualType . "mfg.htm,,,\n\n";
 
 $htmAZ = file_get_contents($htmDir . "accessories_az_preface.htm");
 $htmAZ .= "<ul>\n";
@@ -85,15 +96,15 @@ for ($accessoriesCount = 1 ; $accessoriesCount < sizeof($accessoriesData) ; $acc
   if (substr($accessoriesRow[$accessoryNameIndex],0,1) != "#") {
 
     $catCount[trim($accessoriesRow[$accessoryCatIndex])] = TRUE;
-    $catSection[$accessoriesRow[$accessoryCatIndex]] .= "v***," . $accessoriesRow[$accessoryNameIndex] . ",nul,../../" .  trim($accessoriesRow[$accessoryProjIndex]) . "/html/index.htm,,,\n";
-    $catSectionHtm[$accessoriesRow[$accessoryCatIndex]] .= "    <li><a href=\"../../" . $accessoriesRow[$accessoryProjIndex] . "/html/index.html\">" . $accessoriesRow[$accessoryNameIndex] . " </a></li>\n";    
-    $catSubsectionHtm[$accessoriesRow[$accessoryCatIndex]] .= "  <li><a href=\"../../" . $accessoriesRow[$accessoryProjIndex] . "html/index.html\">" . $accessoriesRow[$accessoryNameIndex] . " </a></li>\n";    
+    $catSection[$accessoriesRow[$accessoryCatIndex]] .= "v***," . trim($accessoriesRow[$accessoryNameIndex]) . ",equip_" . trim($accessoriesRow[$accessoryProjIndex]) . ".html,library/htm/equip_" .  trim($accessoriesRow[$accessoryProjIndex]) . ".htm,,,\n";
+    $catSectionHtm[$accessoriesRow[$accessoryCatIndex]] .= "    <li><a href=\"../../library/html/equip_" . $accessoriesRow[$accessoryProjIndex] . ".html\">" . $accessoriesRow[$accessoryNameIndex] . " </a></li>\n";    
+    $catSubsectionHtm[$accessoriesRow[$accessoryCatIndex]] .= "  <li><a href=\"../../library/html/equip_" . $accessoriesRow[$accessoryProjIndex] . ".html\">" . $accessoriesRow[$accessoryNameIndex] . " </a></li>\n";    
     $catList .= $accessoriesRow[$accessoryCatIndex];
 
     $mfgCount[trim($accessoriesRow[$accessoryMfgIndex])] = TRUE;
-    $mfgSection[trim($accessoriesRow[$accessoryMfgIndex])] .= "v***," . $accessoriesRow[$accessoryNameIndex] . ",nul,../../" .  trim($accessoriesRow[$accessoryProjIndex]) . "/html/index.htm,,,\n";
-    $mfgSectionHtm[trim($accessoriesRow[$accessoryMfgIndex])] .= "    <li><a href=\"../../" . $accessoriesRow[$accessoryProjIndex] . "/html.index.html\">" . $accessoriesRow[$accessoryNameIndex] . " </a></li>\n";    
-    $mfgSubsectionHtm[trim($accessoriesRow[$accessoryMfgIndex])] .= "  <li><a href=\"../../" . $accessoriesRow[$accessoryProjIndex] . "/html/index.html\">" . $accessoriesRow[$accessoryNameIndex] . " </a></li>\n";    
+    $mfgSection[trim($accessoriesRow[$accessoryMfgIndex])] .= "v***," . trim($accessoriesRow[$accessoryNameIndex]) . ",equip_" . trim($accessoriesRow[$accessoryProjIndex]) . ".html,library/htm/equip_" .  trim($accessoriesRow[$accessoryProjIndex]) . ".htm,,,\n";
+    $mfgSectionHtm[trim($accessoriesRow[$accessoryMfgIndex])] .= "    <li><a href=\"../../library/html/equip_" . $accessoriesRow[$accessoryProjIndex] . ".html\">" . $accessoriesRow[$accessoryNameIndex] . "</a></li>\n";    
+    $mfgSubsectionHtm[trim($accessoriesRow[$accessoryMfgIndex])] .= "  <li><a href=\"../../library/html/equip_" . $accessoriesRow[$accessoryProjIndex] . ".html\">" . $accessoriesRow[$accessoryNameIndex] . "</a></li>\n";    
     $mfgList .= $accessoriesRow[$accessoryMfgIndex];
     }
   }
@@ -102,16 +113,16 @@ for ($categoriesCount = 1 ; $categoriesCount < sizeof($categoriesData) ; $catego
   $categoriesRow = explode("	",$categoriesData[$categoriesCount]);
   if (isset($catCount[trim($categoriesRow[$categoryNameIndex])])) {
     $suffix = "";
-    if (file_exists($htmDir . "acc_" . trim($categoriesRow[$categoryHtmIndex]) . "_suffix.htm")) {
-      $suffix = file_get_contents($htmDir . "acc_" . trim($categoriesRow[$categoryHtmIndex]). "_suffix.htm");
+    if (file_exists($htmDir . "cat_" . trim($categoriesRow[$categoryHtmIndex]) . "_suffix.htm")) {
+      $suffix = file_get_contents($htmDir . "cat_" . trim($categoriesRow[$categoryHtmIndex]). "_suffix.htm");
       }
     if (strstr($catList,$categoriesRow[$categoryNameIndex])) {
       $cat .= $catSection[$categoriesRow[$categoryNameIndex]] . "\n";
       $htmCat .= $catSectionHtm[$categoriesRow[$categoryNameIndex]] . "    <p></p>\n    </ul>\n\n";
-      $htmCatSub = file_get_contents($htmDir . "acc_" . trim($categoriesRow[$categoryHtmIndex]) . "_preface.htm") . "\n" . $catSubsectionHtm[$categoriesRow[$categoryNameIndex]] . "  </ul>\n\n" . $suffix;
+      $htmCatSub = file_get_contents($htmDir . "cat_" . trim($categoriesRow[$categoryHtmIndex]) . "_preface.htm") . "\n" . $catSubsectionHtm[$categoriesRow[$categoryNameIndex]] . "  </ul>\n\n" . $suffix;
       }
     //write categories files
-    $outFile = fopen($htmDir . "_acc_" . trim($categoriesRow[$categoryHtmIndex]) . ".htm","w");
+    $outFile = fopen($htmDir . "_cat_" . trim($categoriesRow[$categoryHtmIndex]) . ".htm","w");
     $outSuccess = fwrite($outFile,$htmCatSub);
     $outSuccess = fclose($outFile);
     }
@@ -121,26 +132,26 @@ for ($manufacturersCount = 1 ; $manufacturersCount < sizeof($manufacturersData) 
   $manufacturersRow = explode("	",$manufacturersData[$manufacturersCount]);
   if (isset($mfgCount[trim($manufacturersRow[$manufacturerNameIndex])])) {
     $suffix = "";
-    if (file_exists($htmDir . "equip_" . trim($manufacturersRow[$manufacturerHtmIndex]) . "_suffix.htm")) {
-      $suffix = file_get_contents($htmDir . "equip_" . trim($manufacturersRow[$manufacturerHtmIndex]). "_suffix.htm");
+    if (file_exists($htmDir . "mfg_" . trim($manufacturersRow[$manufacturerHtmIndex]) . "_suffix.htm")) {
+      $suffix = file_get_contents($htmDir . "mfg_" . trim($manufacturersRow[$manufacturerHtmIndex]). "_suffix.htm");
       }
     if (strstr($mfgList,$manufacturersRow[$manufacturerNameIndex])) {
       $mfg .= $mfgSection[$manufacturersRow[$manufacturerNameIndex]] . "\n";
       $htmMfg .= $mfgSectionHtm[$manufacturersRow[$manufacturerNameIndex]] . "    <p></p>\n    </ul>\n\n";
-      $htmMfgSub = file_get_contents($htmDir . "equip_" . trim($manufacturersRow[$manufacturerHtmIndex]) . "_preface.htm") . "\n" . $mfgSubsectionHtm[$manufacturersRow[$manufacturerNameIndex]] . "  </ul>\n\n" . $suffix;
+      $htmMfgSub = file_get_contents($htmDir . "mfg_" . trim($manufacturersRow[$manufacturerHtmIndex]) . "_preface.htm") . "\n" . $mfgSubsectionHtm[$manufacturersRow[$manufacturerNameIndex]] . "  </ul>\n\n" . $suffix;
       }
     //write manufacturers files
-    $outFile = fopen($htmDir . "_equip_" . trim($manufacturersRow[$manufacturerHtmIndex]) . ".htm","w");
+    $outFile = fopen($htmDir . "_mfg_" . trim($manufacturersRow[$manufacturerHtmIndex]) . ".htm","w");
     $outSuccess = fwrite($outFile,$htmMfgSub);
     $outSuccess = fclose($outFile);
     }
   }
-sort($accessoriesData,SORT_STRING);
+
 for ($accessoriesCount = 1 ; $accessoriesCount < sizeof($accessoriesData) ; $accessoriesCount++) {
   $accessoriesRow = explode("	",$accessoriesData[$accessoriesCount]);
   if (substr($accessoriesRow[$accessoryNameIndex],0,1) != "#") {
-    $az .= "v**," . $accessoriesRow[$accessoryNameIndex] . ",nul,../../" . trim($accessoriesRow[$accessoryProjIndex]) . "/html/index.htm,,,\n";
-    $htmAZ .= "  <li><a href=\"../../" . $accessoriesRow[$accessoryProjIndex] . "/html/index.html\">" . $accessoriesRow[$accessoryNameIndex] . " </a></li>\n";
+    $az .= "v**," . trim($accessoriesRow[$accessoryNameIndex]) . ",equip_" . trim($accessoriesRow[$accessoryProjIndex]) . ".html,library/htm/equip_" . trim($accessoriesRow[$accessoryProjIndex]) . ".htm,,,\n";
+    $htmAZ .= "  <li><a href=\"../../library/html/equip_" . trim($accessoriesRow[$accessoryProjIndex]) . ".html\">" . trim($accessoriesRow[$accessoryNameIndex]) . " </a></li>\n";
     }
   }
 
@@ -182,6 +193,8 @@ $outSuccess = fclose($outFile);
 $outFile = fopen($accessoriesMfg,"w");
 $outSuccess = fwrite($outFile,$htmMfg);
 $outSuccess = fclose($outFile);
+
+}
 
 echo $htmAZ;
 
