@@ -1,0 +1,3 @@
+*,Region Specific Information,region.html,library/htm/region_specific.htm,,,
+**,European Union (EU),eu.html,library/htm/eu.htm,,,
+***,WEEE 2013 Compliance,weee_2013.html,library/htm/weee_2013.htm,,,

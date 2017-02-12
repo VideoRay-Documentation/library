@@ -1,0 +1,7 @@
+*,Pro 4,nul,../../pro_4/html,,,../../library/images/pro_4.jpg
+*,Pro 4 Ultra,nul,../../pro_4/html_ultra,,,../../library/images/pro_4.jpg
+*,Deep Blue,nul,../../deep_blue/pdf/vr_deep_blue.pdf,,,../../library/images/deep_blue.jpg
+*,Pro 3 GTO,nul,../../pro_3_gto/pdf/vr_pro3xegto.pdf,,,../../library/images/pro_3_gto.jpg
+*,Pro 3,nul,../../pro_3/pdf/vr_proiii.pdf,,,../../library/images/pro_3.jpg
+*,Explorer,nul,../../explorer/,,,../../library/images/explorer.jpg
+*,Scout,nul,../../scout/,,,../../library/images/scout.jpg

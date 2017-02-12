@@ -2,7 +2,7 @@
 !PRODUCT,VideoRay Library
 !VERSION,1.00.00
 !OUT_DIR,library/
-!VALID_PAGES,4
+!INCLUDED_PAGES,4
 !VALID_TEXT,c
 !TEMPLATE_COVER,required/htm/template_index_print.htm,index_print.htm.htm
 

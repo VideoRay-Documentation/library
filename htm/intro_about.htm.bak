@@ -1,0 +1,223 @@
+<h1>About this Library</h1>
+
+<p>The VideoRay Library provides integrated access to VideoRay's technical publications, including user and maintenance manuals for ROV systems and accessories and operational and industry specific guides.<p>
+
+<h2>Library Organization</h2>
+
+<p>This library is organized into several sections.</p>
+<ul>
+  <li><a href="rov_manuals.html">ROV User Manuals</a><p></p></li>
+  <li><a href="mnt_.html">ROV Maintenance Manuals</a><p></p></li> 
+  <li><a href="acc_.html">Accessory User Manuals</a><p></p></li> 
+  <li><a href="mnt_.html">Accessory Maintenance Manuals</a><p></p></li> 
+  <li><a href="oper_.html">General Operations Guides</a><p></p></li>
+  <li><a href="app_.html">Applications Guides</a><p></p></li>
+  <li><a href="bp_.html">Best Practices Guide</a><p></p></li>
+  </ul>
+
+<!--v-->
+<h2>Library Navigation</h2>
+
+<p>You can navigate through the library to specific topics using the menu, or step through sequentially using the Next and Previous arrowhead buttons.  However, these buttons do not navigate to the individual documents.  You must use the menu to access the individual documents.  The Next button will step you from the current topic to the next topic at the same level unless the current topic has a sub-topic.  If the current topic has a sub-topic, the Next button will step you into the first sub-topic.  The Previous button works similarly, but in reverse sequence.  Your current location within the document is shown as a "breadcrumb" trail at the top of each page under the document title.  You can click on any level of the breadcrumb hierarchy to go that location.  You can also use the following keyboard shortcuts:</p>
+
+<table>
+  <tr>
+    <th>
+      ACTION
+      </th>
+    <th>
+      KEYSTROKE or BUTTON
+      </th>
+    </tr>
+  <tr>
+    <td>
+      Previous Page
+      </td>
+    <td class="imageCell">
+      Alt-p or <img src="../../required/images/left_arrow_48.png" border="0">
+      </td>
+    </tr>
+  <tr>
+    <td>
+      Next Page
+      </td>
+    <td class="imageCell">
+      Alt-n or <img src="../../required/images/right_arrow_48.png" border="0">
+      </td>
+    </tr>
+  <tr>
+    <td>
+      Up one level of the breadcrumb hierarchy
+      </td>
+    <td class="imageCell">
+      Alt-u
+      </td>
+    </tr>
+  </table>
+
+<p>Links are shown in brown font.</p>
+<h2>Finding Information</h2>
+
+<p>This document includes a Google search on each page.  You must be connected to the Internet in order to be able to use the Google search, and you can select whether to search VideoRay's online document library only (the default) or the Internet.
+<!--/v-->
+
+<h2>Document Conventions</h2>
+
+<p>Several symbols are used throughout this documentation to add emphasis and to assist in relocating important information.  The following table describes these symbols and their uses.<p>
+
+<table>
+  <tr>
+    <th>
+      SYMBOL
+      </th>
+    <th>
+      DESCRIPTION
+      </th>
+    </tr>
+  <tr>
+    <td class="imageCell">
+      <img src="../../required/images/icon_danger.png">
+      </td>
+    <td>
+      The Danger icon is used to indicate there is a potential risk of personal injury or death.  Extra care should be taken to understand the risks, and all personnel should exercise caution.  It may also be appropriate to warn others in the immediate vicinity.
+      </td>
+    </tr>
+  <tr>
+    <td class="imageCell">
+      <img src="../../required/images/icon_caution.png">
+      </td>
+    <td>
+      The Caution icon is used to indicate there is a potential risk of damage to the equipment or surrounding property.  Personnel should receive training in the appropriate procedures before attempting to operate or maintain the equipment.
+      </td>
+    </tr>
+  <tr>
+    <td class="imageCell">
+      <img src="../../required/images/icon_note.gif">
+      </td>
+    <td>
+      The Note icon is used to emphasize a specific detail or point of information.
+      </td>
+    </tr>
+  <tr>
+    <td class="imageCell">
+      <img src="../../required/images/icon_tip.gif">
+      </td>
+    <td>
+      The Tip icon is used to highlight a suggestion.
+      </td>
+    </tr>
+<!--v-->
+  <tr>
+    <td class="imageCell">
+      <img src="../../required/images/1344963776_kpdf.png">
+      </td>
+    <td>
+      The Reference icon is a link to reference material in an external resource.
+      </td>
+    </tr>
+  <tr>
+    <td class="imageCell">
+      <img src="../../required/images/icon_play.png">
+      </td>
+    <td>
+      The Play Video button icon is used to indicate that a video about the topic is available.  To view the video, click on the play video button icon.
+      </td>
+    </tr>
+   <tr>
+    <td class="imageCell">
+      <img src="../../required/images/icon_hand_full.gif" name="hand">
+      </td>
+    <td>
+      The Hand icon is used to indicate an interactive element of the page.  When you hover your mouse over the hand icon, an image on the page will change to reflect the information in the text immediately prior to the hand icon.  Try it here - hover your mouse over the following text and hand icon to turn the hand icon to the left blue: <a name="keyin" onmouseover="hand.src=hand2.src" onmouseout="hand.src=hand1.src">Interactive Text <img src="../../required/images/icon_hand.gif"></a>.
+      </td>
+    </tr>
+<!--/v-->
+ </table>
+
+<!--v-->
+<h2>Document Customization - My_Notes</h2>
+
+<p><img src="../../required/images/icon_tip.gif"> This document has been developed to allow local online versions to be customized using the My_Notes feature.  Users can add their own notes to each page.  See the <a href="custom_my_notes.html">Customizing this Documentation</a> page in the <a href="custom_.html">Customization</a> section for more information about how to customize this document.</p>
+<!--/v-->
+
+<h2>Quality Commitment</h2>
+
+<p>VideoRay strives to design, manufacture, deliver and support the highest quality products and services, including this documentation.   We have made every effort to ensure that this documentation is accurate and provides you with the most up-to-date information.  However, there is no substitute for experience and/or training, especially with respect to the real purpose for which you plan to use this equipment.  We encourage you to explore options beyond the scope of these materials to expand your knowledge and skills necessary to support your application.  In addition to this documentation, VideoRay offers training and technical support and hosts a general user discussion forum and user image gallery.</p> 
+
+<p>We also realize that collectively, users of our products spend considerably more time operating our systems than we do ourselves.  Users also encounter more diverse operating environments across an extremely broad range of applications.  We highly value this vast experience base, and if you have any questions or suggestions, please feel free to contact us by any of the following methods.</p>
+
+<center>
+<table class="transparent">
+  <tr align="left">
+    <td class="transparent">
+      <b>Address</b>
+      </td>
+    <td class="transparent">
+      &nbsp;
+      </td>
+    </tr>
+  <tr align="left">
+    <td class="transparent">
+      <a href="http://www.videoray.com">VideoRay LLC</a><br>
+      212 East High Street<br>
+      Pottstown, PA 19464<br>
+      USA<br>
+      &nbsp;
+      </td>
+    <td class="transparent">
+      &nbsp;
+      </td>
+    </tr>
+  <tr align="left">
+    <td class="transparent">
+      <b>Email</b>
+      </td>
+    <td class="transparent">
+      &nbsp;
+      </td>
+    </tr>
+  <tr align="left">
+    <td class="transparent">
+      info@videoray.com
+      </td>
+    <td class="transparent">
+      General Information and Sales
+      </td>
+    </tr>
+  <tr align="left" valign="top">
+    <td class="transparent">
+      support@videoray.com<br>
+      &nbsp;
+      </td>
+    <td class="transparent">
+      Technical Support
+      </td>
+    </tr>
+  <tr align="left">
+    <td class="transparent">
+      <b>Telephone</b>
+      </td>
+    <td class="transparent">
+      &nbsp;
+      </td>
+    </tr>
+  <tr align="left">
+    <td class="transparent">
+      +1 610-458-3000
+      </td>
+    <td class="transparent">
+      Office
+      </td>
+    </tr>
+  <tr align="left">
+    <td class="transparent">
+      +1 610-458-3010
+      </td>
+    <td class="transparent">
+      Fax
+      </td>
+    </tr>
+  </table>
+</center>
+
+<p>The information contained herein is deemed accurate at the time of printing and is subject to change without notice.</p>
